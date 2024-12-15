@@ -13,12 +13,12 @@
 .header__img {
   width: 100%;
 }
-.header .more-info {
+.header__link {
   font-family: fantasy, cursive;
 }
 
 @media (max-width: 768px) {
-  .header { 
+  .header__link { 
     text-align: center;
   }
 }
@@ -27,12 +27,12 @@
   width: 500px;
   margin: 0 auto 0;
 }
-.task-input {
+.section__task-row__task-input {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
-.task-row-wrapper {
+.section__task-row-wrapper {
   display: flex;
 }
 .list {
@@ -43,8 +43,11 @@
 .heading {
   list-style: none;
 }
-.input,
-.button{
+
+.list__item__input--checkbox,
+.list__item__input--text,
+.list__item__edit-task,
+.list__item__delete-task {
   outline: none;
 }
 .button {
@@ -60,8 +63,8 @@
   color: #3a3a3a;
 }
 /* Heading */
-.new-task,
-.heading {
+.section__title--new-task,
+.section__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -87,7 +90,7 @@
 }
 
 /* New Task */
-.new-task {
+.section__title--new-task {
   display: block;
   margin: 0 0 20px;
 }
@@ -109,7 +112,7 @@
   vertical-align: middle;
 }
 
-.list__item > .input[type="checkbox"] {
+.list__item > .list__item__input--checkbox {
   margin: 0 10px;
 }
 .list__item > .label {
@@ -121,12 +124,12 @@
 .list__item > .input[type="text"] {
   width: 226px;
 }
-.button.delete-task .img-delete-task {
+.button__img-delete-task {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.button.delete-task .img-delete-task:hover {
+.button__img-delete-task:hover {
   transform: rotateZ(0);
 }
 
@@ -137,15 +140,15 @@
 }
 
 /* Edit Task */
-.list .list__item .input[type=text] {
+.list .list__item .list__item__input--text {
   display: none;
 }
 
-.list .list__item.edit-mode .input[type=text] {
+.list .list__item.list__item--edit-mode .list__item__input--text {
   display: inline-block;
   width: 224px;
 }
 
-.list .list__item.edit-mode .label {
+.list .list__item.list__item--edit-mode .label {
   display: none;
 }
